@@ -1,0 +1,98 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Neue Machina';
+    position: relative;
+}
+
+.header::after{
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(/assets/img/header.svg);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.photo {
+    width: 250px;
+}
+
+h1{
+    text-align: center;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    list-style-type: none; 
+}
+
+.information li{
+    display: flex;
+    align-items: center;
+} 
+
+.information a{
+    text-decoration: none;
+    color: white;
+    padding-left: .5rem;
+    margin: 1.25rem 0;
+    font-size: 1.25rem;
+}
+
+.information li a:hover{
+    text-decoration: underline;
+}
+
+.information li img{
+    width: 25px;
+    height: 25px;
+}
+
+.information p {
+    font-size: 1.25rem;
+    padding-left: .5rem;
+}
+
+/* .information p::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/icons/icon\ email.png');
+    background-repeat: no-repeat;
+} */
+
+@media only screen and (min-width: 768px) {
+    .header{
+        display: grid;
+        grid-template-areas: 
+        "photo title"
+        "photo information"
+        ;
+    }
+
+    .header .photo{
+        grid-area: photo;
+        margin: 0 auto
+    }
+
+    .header .title{
+        grid-area: title;
+        text-align: start;
+        max-width: 210px;
+    }
+
+    .header .information{
+        grid-area: information;
+    }
+}
